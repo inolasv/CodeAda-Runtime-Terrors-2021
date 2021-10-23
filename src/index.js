@@ -9,6 +9,7 @@ class Heading extends Component {
   render() {
     return (
       <div>
+      <h2 className="description">Take a survey to </h2>
       </div>
     );
   }

@@ -4,11 +4,12 @@
 
 .App-header {
   background-color: hsl(170, 19%, 12%);
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 30px;
   color: white;
 }
 
