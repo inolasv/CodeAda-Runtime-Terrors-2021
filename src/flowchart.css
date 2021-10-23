@@ -1,0 +1,18 @@
+
+
+body{
+    background-color: rgb(34, 53, 50);
+    color: white;
+    justify-content: center;
+}
+
+.button {
+    background-color: rgb(105, 140, 163);
+    color: white;
+    font-size: 15px;
+    font-family: 'Bowlby One SC', cursive;
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
