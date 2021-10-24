@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './flowchart.css';
+import PhysiologicalApp from './PhysiologicalApp';
+import VisibleSignsApp from './VisibleSignsApp';
+import BehavioralApp from './BehavioralApp';
 
 
 
@@ -101,6 +104,7 @@ class Q2_Yes extends Component {
                 zombie: true,
                 dead: false,
             });
+            // get location and add case to dataset
         }
 
         let noClicked = () => {
@@ -141,7 +145,10 @@ class Q2_No extends Component {
         return(
             <div>
             <center>
-                <h3>Chexkboxes</h3>
+                <h3>Checkboxes</h3>
+                <VisibleSignsApp />
+                <PhysiologicalApp />
+                <BehavioralApp />
             </ center>
             </div>
         );
