@@ -7,6 +7,7 @@ const OPTIONS = ["bite marks", "pale skin", "hair loss", "excess saliva producti
 class VisibleApp extends Component {
   state = {
     phys: false,
+    
     checkboxes: OPTIONS.reduce(
       (options, option) => ({
         ...options,
@@ -74,7 +75,7 @@ class VisibleApp extends Component {
     }
 
     const showPhys = this.state.phys;
-
+    
     return (
       <div className="container">
         <div className="row mt-5">

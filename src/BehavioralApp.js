@@ -93,6 +93,16 @@ class BehavioralApp extends Component {
             </form>
           </div>
         </div>
+      <div> 
+        <img src = "https://www.notion.so/CODE-ADA-map-screenshots-44deceead81d4555b7bb6d2d421e2d31#6ab551f105f74bb89fffa303a36a085a" />
+        <img src = {'https://www.notion.so/CODE-ADA-map-screenshots-44deceead81d4555b7bb6d2d421e2d31#6ab551f105f74bb89fffa303a36a085a'} />
+      </div>
+
+      <div> 
+        <img src = "https://www.notion.so/CODE-ADA-map-screenshots-44deceead81d4555b7bb6d2d421e2d31#9cb676dfe06f453ca2c7dc341e294d43" />
+        <img src = {'https://www.notion.so/CODE-ADA-map-screenshots-44deceead81d4555b7bb6d2d421e2d31#9cb676dfe06f453ca2c7dc341e294d43'} />
+      </div>
+
       </div>
     );
   }
