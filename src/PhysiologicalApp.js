@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
+<<<<<<< HEAD
 import "./Checkboxes.css"
+=======
+import BehavioralApp from "./BehavioralApp";
+>>>>>>> 3fd04a255e8ebac2d70eae2ffd349501f9f26123
 
 const OPTIONS = ["dizziness", "fever", "fatigue/weakness/soreness", "chills", "fainting", "dehydration", "coughing up blood"]; 
 

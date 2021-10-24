@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
+import PhysiologicalApp from "./PhysiologicalApp";
 
 const OPTIONS = ["bite marks", "pale skin", "hair loss", "excess saliva production", "diluted pupils", "involuntary muscle spasms", "signs of body decomposition"]; 
 
 class VisibleApp extends Component {
   state = {
+    save : false,
+
     checkboxes: OPTIONS.reduce(
       (options, option) => ({
         ...options,
@@ -64,6 +67,13 @@ class VisibleApp extends Component {
   createCheckboxes = () => OPTIONS.map(this.createCheckbox);
 
   render() {
+    let saveClicked = () => {
+      console.log("save clicked");
+      this.setState({
+          save : true
+      });
+    }
+
     return (
       <div className="container">
         <div className="row mt-5">
@@ -86,13 +96,14 @@ class VisibleApp extends Component {
                 >
                   Deselect All
                 </button>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary" onClick={saveClicked}>
                   Save
                 </button>
               </div>
             </form>
           </div>
         </div>
+        { saveClicked && (<PhysiologicalApp/>) }
       </div>
     );
   }

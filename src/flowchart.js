@@ -145,9 +145,39 @@ class Q2_No extends Component {
         return(
             <div>
             <center>
-                <h3>Checkboxes</h3>
+                <h3>Please Select All of Subject's Symptoms</h3>
+                <h4>Visible Signs</h4>
                 <VisibleSignsApp />
+            </ center>
+            </div>
+        );
+    }
+}
+
+// from Q2 answer submit symptoms 
+class PhysiologicalSigns extends Component {
+
+    render() {
+
+        return(
+            <div>
+            <center>
+                <h4>Physiological Signs</h4>
                 <PhysiologicalApp />
+            </ center>
+            </div>
+        );
+    }
+}
+
+class BehavioralSigns extends Component {
+
+    render() {
+
+        return(
+            <div>
+            <center>
+                <h4>Behavioral Signs</h4>
                 <BehavioralApp />
             </ center>
             </div>
