@@ -4,6 +4,8 @@ import PhysiologicalApp from "./PhysiologicalApp";
 
 const OPTIONS = ["bite marks", "pale skin", "hair loss", "excess saliva production", "diluted pupils", "involuntary muscle spasms", "signs of body decomposition"]; 
 
+var points = 0;
+
 class VisibleApp extends Component {
   state = {
     phys: false,
@@ -51,6 +53,7 @@ class VisibleApp extends Component {
       .filter(checkbox => this.state.checkboxes[checkbox])
       .forEach(checkbox => {
         console.log(checkbox, "is selected.");
+        points += 1;
         // send data to api here.
       });
   };
@@ -61,6 +64,7 @@ class VisibleApp extends Component {
       isSelected={this.state.checkboxes[option]}
       onCheckboxChange={this.handleCheckboxChange}
       key={option}
+      className="form"
     />
   );
 
@@ -103,6 +107,7 @@ class VisibleApp extends Component {
                 </button>
               </div>
             </form>
+            { showPhys && (<h3>Physiological Signs</h3>)}
             { showPhys && (<PhysiologicalApp />) }
           </div>
         </div>
@@ -112,3 +117,4 @@ class VisibleApp extends Component {
 }
 
 export default VisibleApp;
+export {points};
