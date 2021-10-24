@@ -6,8 +6,7 @@ const OPTIONS = ["bite marks", "pale skin", "hair loss", "excess saliva producti
 
 class VisibleApp extends Component {
   state = {
-    save : false,
-
+    phys: false,
     checkboxes: OPTIONS.reduce(
       (options, option) => ({
         ...options,
@@ -70,9 +69,11 @@ class VisibleApp extends Component {
     let saveClicked = () => {
       console.log("save clicked");
       this.setState({
-          save : true
+          phys: true
       });
     }
+
+    const showPhys = this.state.phys;
 
     return (
       <div className="container">
@@ -101,9 +102,9 @@ class VisibleApp extends Component {
                 </button>
               </div>
             </form>
+            { showPhys && (<PhysiologicalApp />) }
           </div>
         </div>
-        { saveClicked && (<PhysiologicalApp/>) }
       </div>
     );
   }

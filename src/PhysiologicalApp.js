@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
-<<<<<<< HEAD
 import "./Checkboxes.css"
-=======
 import BehavioralApp from "./BehavioralApp";
->>>>>>> 3fd04a255e8ebac2d70eae2ffd349501f9f26123
 
 const OPTIONS = ["dizziness", "fever", "fatigue/weakness/soreness", "chills", "fainting", "dehydration", "coughing up blood"]; 
 
 class PhysiologicalApp extends Component {
   state = {
+    phys: false,
     checkboxes: OPTIONS.reduce(
       (options, option)=> ({
         ...options,
@@ -23,6 +21,7 @@ class PhysiologicalApp extends Component {
     Object.keys(this.state.checkboxes).forEach(checkbox => {
       // BONUS: Can you explain why we pass updater function to setState instead of an object?
       this.setState(prevState => ({
+        phys: false,
         checkboxes: {
           ...prevState.checkboxes,
           [checkbox]: isSelected
@@ -39,6 +38,7 @@ class PhysiologicalApp extends Component {
     const { name } = changeEvent.target;
 
     this.setState(prevState => ({
+      phys: false,
       checkboxes: {
         ...prevState.checkboxes,
         [name]: !prevState.checkboxes[name]
@@ -69,6 +69,13 @@ class PhysiologicalApp extends Component {
   createCheckboxes = () => OPTIONS.map(this.createCheckbox);
 
   render() {
+    let saveClicked = () => {
+      console.log("save button clicked");
+      this.setState({
+          phys: true,
+      });
+  }
+
     return (
       <div className="container">
         <div className="row mt-5">
@@ -91,7 +98,7 @@ class PhysiologicalApp extends Component {
                 >
                   Deselect All
                 </button>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary" onClick="saveClicked">
                   Save
                 </button>
               </div>
