@@ -16,7 +16,7 @@ class Survey extends Component {
         let startClicked = e => {
             console.log("start button clicked");
             this.setState({
-                q1: !this.state.q1
+                q1: true
             });
         }
         
