@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Survey from './flowchart';
+import { Survey } from './flowchart';
 import reportWebVitals from './reportWebVitals';
 
 
