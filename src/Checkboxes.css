@@ -12,7 +12,7 @@
 .btn-primary {
     background-color: green;
 }
-.form-check-input {
+.form-check-input .form .form-check {
     color: white;
     font-family: 'Lilita One', cursive;
     font-size: 30px;

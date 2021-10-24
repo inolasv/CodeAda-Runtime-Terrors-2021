@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import Checkbox from "./Checkbox";
 import "./Checkboxes.css"
 import BehavioralApp from "./BehavioralApp";
+import {points} from "./VisibleSignsApp";
 
 const OPTIONS = ["dizziness", "fever", "fatigue/weakness/soreness", "chills", "fainting", "dehydration", "coughing up blood"]; 
 
+
 class PhysiologicalApp extends Component {
   state = {
-    phys: false,
+    behavioral: false,
     checkboxes: OPTIONS.reduce(
       (options, option)=> ({
         ...options,
@@ -21,7 +23,6 @@ class PhysiologicalApp extends Component {
     Object.keys(this.state.checkboxes).forEach(checkbox => {
       // BONUS: Can you explain why we pass updater function to setState instead of an object?
       this.setState(prevState => ({
-        phys: false,
         checkboxes: {
           ...prevState.checkboxes,
           [checkbox]: isSelected
@@ -38,7 +39,7 @@ class PhysiologicalApp extends Component {
     const { name } = changeEvent.target;
 
     this.setState(prevState => ({
-      phys: false,
+      behavioral: false,
       checkboxes: {
         ...prevState.checkboxes,
         [name]: !prevState.checkboxes[name]
@@ -53,6 +54,8 @@ class PhysiologicalApp extends Component {
       .filter(checkbox => this.state.checkboxes[checkbox])
       .forEach(checkbox => {
         console.log(checkbox, "is selected.");
+        //points++;
+        console.log("what" + points)
       });
   };
 
@@ -69,15 +72,18 @@ class PhysiologicalApp extends Component {
   createCheckboxes = () => OPTIONS.map(this.createCheckbox);
 
   render() {
-    let saveClicked = () => {
-      console.log("save button clicked");
+    let saveClicked = e => {
       this.setState({
-          phys: true,
+          behavioral: true,
       });
-  }
+    }
+    
+
+    const showBehavioral = this.state.behavioral;
 
     return (
       <div className="container">
+            {console.log("start at " + points)}
         <div className="row mt-5">
           <div className="col-sm-12">
             <form onSubmit={this.handleFormSubmit}>
@@ -98,13 +104,16 @@ class PhysiologicalApp extends Component {
                 >
                   Deselect All
                 </button>
-                <button type="submit" className="btn btn-primary" onClick="saveClicked">
+                <button type="submit" className="btn btn-primary" onClick={saveClicked}>
                   Save
                 </button>
               </div>
             </form>
           </div>
         </div>
+        { showBehavioral && (<h3>Behavioral Signs</h3>)}
+        { showBehavioral && (<BehavioralApp />)}
+        {console.log(points)}
       </div>
     );
   }
