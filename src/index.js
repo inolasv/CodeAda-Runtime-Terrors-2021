@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-//import 
+import Survey from './flowchart';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -10,6 +10,9 @@ class Heading extends Component {
   render() {
     return (
       <div>
+      <center>
+        <h2 className="description">Take a survey to determine presence of zombie-fication!</h2>
+      </center>
       </div>
     );
   }
@@ -19,6 +22,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <Heading />
+    <Survey />
   </React.StrictMode>, 
   document.getElementById('root')
 );
