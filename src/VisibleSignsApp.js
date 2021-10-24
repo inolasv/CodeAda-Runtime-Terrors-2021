@@ -6,6 +6,7 @@ const OPTIONS = ["bite marks", "pale skin", "hair loss", "excess saliva producti
 
 class VisibleApp extends Component {
   state = {
+    phys: false,
     checkboxes: OPTIONS.reduce(
       (options, option) => ({
         ...options,
@@ -49,6 +50,7 @@ class VisibleApp extends Component {
       .filter(checkbox => this.state.checkboxes[checkbox])
       .forEach(checkbox => {
         console.log(checkbox, "is selected.");
+        // send data to api here.
       });
   };
 
@@ -67,11 +69,11 @@ class VisibleApp extends Component {
     let saveClicked = () => {
       console.log("save clicked");
       this.setState({
-          save : true
+          phys: true
       });
     }
 
-    const showSave = this.state.save;
+    const showPhys = this.state.phys;
 
     return (
       <div className="container">
@@ -100,6 +102,7 @@ class VisibleApp extends Component {
                 </button>
               </div>
             </form>
+            { showPhys && (<PhysiologicalApp />) }
           </div>
         </div>
       </div>
