@@ -1,0 +1,21 @@
+
+.btn {
+    background-color: rgb(105, 140, 163);
+    color: white;
+    font-size: 15px;
+    font-family: 'Lilita One', cursive;
+    width: fit-content;
+    height: 30px;
+    margin: 10px;
+    margin-top: 15px;
+}
+.btn-primary {
+    background-color: green;
+}
+.form-check-input {
+    color: white;
+    font-family: 'Lilita One', cursive;
+    font-size: 30px;
+    margin: 5px;
+    justify-content: left;
+}

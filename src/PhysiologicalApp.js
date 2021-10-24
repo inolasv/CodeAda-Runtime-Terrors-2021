@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
+import "./Checkboxes.css"
 
 const OPTIONS = ["dizziness", "fever", "fatigue/weakness/soreness", "chills", "fainting", "dehydration", "coughing up blood"]; 
 
 class PhysiologicalApp extends Component {
   state = {
     checkboxes: OPTIONS.reduce(
-      (options, option) => ({
+      (options, option)=> ({
         ...options,
         [option]: false
-      }),
+      }), 
       {}
     )
   };
@@ -57,6 +58,7 @@ class PhysiologicalApp extends Component {
       isSelected={this.state.checkboxes[option]}
       onCheckboxChange={this.handleCheckboxChange}
       key={option}
+      className="form-check-input"
     />
   );
 
