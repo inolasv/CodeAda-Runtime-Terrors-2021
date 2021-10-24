@@ -51,6 +51,7 @@ class VisibleApp extends Component {
       .filter(checkbox => this.state.checkboxes[checkbox])
       .forEach(checkbox => {
         console.log(checkbox, "is selected.");
+        // send data to api here.
       });
   };
 
